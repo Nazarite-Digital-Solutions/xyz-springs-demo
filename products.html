@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+    <title>XYZ Springs | Products – Springs & Wire Forms Manufacturer (Demo)</title>
+    <meta name="description" content="XYZ Springs manufactures high-quality metal compression springs, tension springs, torsion springs and wire forms.">
+    <link rel="canonical" href="https://www.xyzsprings.vercel.app/products">
+    
+    <meta name="robots" content="noindex, nofollow">
+    
+    <meta name="application-name" content="XYZ Springs Demo Website">
+
+    <meta name="author" content="Nazarite Business Solutions">
+    
+    <link rel="icon" type="image/svg+xml" href="xyz-springs-favicon.svg">
+    <link rel="stylesheet" href="header-css.css">
+  
+    <style>
+      *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+      html { scroll-behavior: smooth; }
+
+      body { min-height: 100vh; }
+
+      .site-header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+      }
+
+      /* ---------- PRODUCT PAGE SECTION ---------- */
+      
+      #products {
+        scroll-margin-top: 10rem;
+      }
+      
+      .product-page {
+        min-height: 100vh;
+        width: 100%;
+        background-color: #111;
+        background-image: none;
+        padding-top: 10rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .product-page-inner {
+        width: 90%;
+        max-width: 1200px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+      }
+
+      /* ---------- PRODUCT PAGE TITLE ---------- */
+      
+      .product-page-title {
+        text-align: center;
+        font-family: Arial, sans-serif;
+        font-size: 2.5rem;
+        font-weight: 700;
+        line-height: 1.2;
+        color: red;
+      }
+
+      .product-page-title-word-springs {
+        color: white;
+        text-shadow: 2px 2px 4px white;
+      }
+      
+      .product-page-title-word-xyz {
+        color: red;
+        text-shadow: 2px 2px 4px red;
+      }
+      
+
+      /* ---------- PRODUCT INFORMATION BOX ---------- */
+      
+      .product-information-box {
+        font-family: Arial, sans-serif;
+        border: 3px solid red;
+        border-radius: 0.5rem;
+        background-color: black;
+        padding: 1.5rem 2rem;
+        width: 100%;
+        max-width: 900px;
+        text-align: center;
+        font-size: 1.1rem;
+        color: white;
+        line-height: 1.7;
+      }
+
+      .product-information-box-xyz {
+        color: red;
+        font-weight: 700;
+      }
+
+      .product-information-box-springs {
+        color: white;
+        font-weight: 700;
+      }
+
+      /* ---------- PRODUCT GRID ---------- */
+      
+      .product-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5rem;
+        width: 100%;
+    }
+
+      /* ---------- PRODUCT CARD ---------- */
+      
+      .product-card {
+        border: 3px solid red;
+        border-radius: 0.5rem;
+        background-color: black;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        overflow: hidden;
+      }
+
+      .product-card-heading {
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 1.4rem;
+        font-weight: 700;
+        color: white;
+        text-decoration: 3px underline red;
+        text-align: center;
+        padding: 1rem 1rem 0.75rem;
+      }
+
+      .product-card-image-wrapper {
+        width: 100%;
+        overflow: hidden;
+        background-color: black;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .product-card-image-wrapper picture {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      .product-card-image-wrapper img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      /* ---------- CONTACT BUTTON ---------- */
+      
+      .product-page-contact-button-wrapper {
+        display: flex;
+        justify-content: center;
+        margin-top: 1.5rem;
+      }
+
+      .product-page-contact-button {
+        font-family: Arial, sans-serif;
+        font-size: 1rem;
+        font-weight: 700;
+        color: black;
+        background-color: white;
+        border: 3px solid red;
+        border-radius: 2rem;
+        padding: 0.75rem 2rem;
+        margin-bottom: 0;
+        cursor: pointer;
+        transition: background-color 0.25s ease, color 0.25s ease;
+        letter-spacing: 0.04em;
+        display: inline-block;
+        text-decoration: none;
+      }
+      
+      .product-page-contact-button:hover {
+        background-color: red;
+        color: white;
+      }
+
+      /* ---------- COPYRIGHT ---------- */
+      
+      .copyright {
+        width: 100%;
+        text-align: center;
+        color: white;
+        font-size: 0.8rem;
+        font-family: Arial, sans-serif;
+        padding: 1rem 1rem;
+        margin-top: 1rem;
+      }
+
+/* ───────────────────────────────────────────────── MEDIA QUERIES ────────────────────────────────────────────────── */
+      
+      /* ---------- 1024px ---------- */
+      
+      @media screen and (max-width: 1024px) {
+        .product-page-title {
+          font-size: 2.2rem;
+        }
+
+        .product-information-box {
+          font-size: 1.1rem;
+          padding: 1.2rem 1.5rem;
+        }
+
+        .product-card-heading {
+          font-size: 1.3rem;
+        }
+      }
+
+      /* ---------- 700px ---------- */
+      
+      @media screen and (max-width: 700px) {
+        .product-page {
+          padding-top: 10rem;
+        }
+
+        .product-page-inner {
+          width: 94%;
+          gap: 1.5rem;
+        }
+
+        .product-page-title {
+          font-size: 2rem;
+        }
+
+        .product-information-box {
+          font-size: 1rem;
+          padding: 1rem 1.2rem;
+        }
+
+        .product-grid {
+          grid-template-columns: 1fr;
+          gap: 1rem;
+        }
+
+        .product-card-heading {
+          font-size: 1.1rem;
+          padding: 0.8rem 0.8rem 0.6rem;
+        }
+        
+        .copyright {
+          margin-top: 1.5rem;
+          margin-bottom: 1rem;
+        }
+
+        /* ---------- DISABLE HOVER EFFECTS ON TABLET ---------- */
+        
+        .product-page-contact-button:hover {
+          background-color: white;
+          color: black;
+        }
+      }
+
+      /* ---------- 468px ---------- */
+      
+      @media screen and (max-width: 468px) {
+        .product-page {
+          padding-top: 10rem;
+          padding-bottom: 1rem;
+        }
+
+        .product-page-inner {
+          width: 96%;
+          gap: 1.2rem;
+        }
+
+        .product-page-title {
+          font-size: 1.8rem;
+        }
+
+        .product-information-box {
+          font-size: 0.95rem;
+          padding: 0.9rem 1rem;
+        }
+
+        .product-grid {
+          grid-template-columns: 1fr 1fr;
+          gap: 0.75rem;
+        }
+
+        .product-card-heading {
+          font-size: 0.85rem;
+          padding: 0.6rem 0.5rem 0.5rem;
+          text-decoration-line: underline;
+          text-decoration-color: red;
+          text-decoration-thickness: 2px;
+        }
+
+        .product-page-contact-button {
+          font-size: 0.9rem;
+          padding: 0.6rem 2rem;
+        }
+        
+        .copyright {
+          margin-top: 1.5rem;
+          font-size: 0.6rem;
+        }
+
+        /* ---------- DISABLE HOVER EFFECTS ON MOBILE ---------- */
+        
+        .product-page-contact-button:hover {
+          background-color: white;
+          color: black;
+        }
+      }
+    </style>
+  </head>
+
+<!-- ──────────────────────────────────────────────────── BODY ───────────────────────────────────────────────────── -->
+  
+  <body>
+
+<!-- ─────────────────────────────────────────────────── HEADER ──────────────────────────────────────────────────── -->
+    
+    
+<!-- ─────────────────────────────────────────────────── BANNER ──────────────────────────────────────────────────── -->
+    
+    <header class="site-header">
+      <div class="banner">
+        <p>
+          <strong>PORTFOLIO DEMO</strong>
+          <span class="separator">•</span>
+          Designed &amp; Developed by
+          <a href="https://nazaritedigitalsolutions.com">Nazarite Digital Solutions</a>
+          <span class="separator">•</span>
+          Fictional business created to showcase web development skills.
+        </p>    
+      </div>
+
+<!-- ─────────────────────────────────────────────────── NAVBAR ──────────────────────────────────────────────────── -->
+
+        <nav class="navbar" role="navigation" aria-label="Main navigation">
+          <div class="navbar-logo">
+            <picture>
+              <source srcset="xyz-springs-logo.webp" type="image/webp">
+              <img src="xyz-springs-logo.png" alt="XYZ Springs logo">
+            </picture>
+          </div>
+
+          <!-- SOCIALS -->
+            
+          <div class="navbar-center">
+            <span class="navbar-tagline">Stay connected</span>
+              <div class="navbar-socials">
+            
+                <!-- FCEBOOK -->
+                    
+                <a href="/social-media-redirect-page" target="_self" rel="noopener noreferrer" aria-label="Facebook">
+                  <svg class="social-icon" viewBox="0 0 24 24" fill="#1877F2" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078v-3.49h3.047V9.413c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.234 2.686.234v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073z"/>
+                  </svg>
+                </a>
+                    
+                <!-- INSTAGRAM -->
+                    
+                <a href="/social-media-redirect-page" target="_self" rel="noopener noreferrer" aria-label="Instagram">
+                  <svg class="social-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                      <radialGradient id="ig-grad-contact" cx="30%" cy="107%" r="150%">
+                        <stop offset="0%" stop-color="#fdf497"/>
+                        <stop offset="5%" stop-color="#fdf497"/>
+                        <stop offset="45%" stop-color="#fd5949"/>
+                        <stop offset="60%" stop-color="#d6249f"/>
+                        <stop offset="90%" stop-color="#285AEB"/>
+                      </radialGradient>
+                    </defs>
+                    <path fill="url(#ig-grad-contact)" d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/>
+                  </svg>
+                </a>
+                    
+                <!-- TIKTOK -->
+                    
+                <a href="/social-media-redirect-page" target="_self" rel="noopener noreferrer" aria-label="TikTok">
+                  <svg class="social-icon" viewBox="0 0 24 24" fill="#ffffff" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34l-.03-8.41a8.16 8.16 0 0 0 4.78 1.52V5.02a4.85 4.85 0 0 1-1-.33z"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            <!-- RIGHT NAV LINKS -->
+            
+            <ul class="navbar-links" role="list">
+              <li><a href="/">HOME</a></li>
+              <li><a href="/#about-page">ABOUT</a></li>
+              <li><a href="#products">PRODUCTS</a></li>
+              <li><a href="/contact">CONTACT</a></li>
+            </ul>
+
+            <!-- HAMBURGER FOR TABLET AND MOBILE ONLY -->
+            
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    
+
+        <!-- MOBILE DROP DOWN -->
+        
+        <div class="mobile-menu" id="mobile-menu" role="menu">
+          <div class="mobile-menu-socials">
+            <span class="navbar-tagline">Stay connected</span>
+                
+            <!-- FCEBOOK -->
+                
+            <a href="/social-media-redirect-page" target="_self" rel="noopener noreferrer" aria-label="Facebook">
+              <svg class="social-icon" viewBox="0 0 24 24" fill="#1877F2" xmlns="http://www.w3.org/2000/svg">
+                <path d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078v-3.49h3.047V9.413c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.234 2.686.234v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073z"/>
+              </svg>
+            </a>
+                
+            <!-- INSTAGRAM -->
+                
+            <a href="/social-media-redirect-page" target="_self" rel="noopener noreferrer" aria-label="Instagram">
+              <svg class="social-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <radialGradient id="ig-grad-m" cx="30%" cy="107%" r="150%">
+                    <stop offset="0%" stop-color="#fdf497"/>
+                    <stop offset="5%" stop-color="#fdf497"/>
+                    <stop offset="45%" stop-color="#fd5949"/>
+                    <stop offset="60%" stop-color="#d6249f"/>
+                    <stop offset="90%" stop-color="#285AEB"/>
+                  </radialGradient>
+                </defs>
+                <path fill="url(#ig-grad-m)" d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/>
+              </svg>
+            </a>
+                
+            <!-- TIKTOK -->
+                
+            <a href="/social-media-redirect-page" target="_self" rel="noopener noreferrer" aria-label="TikTok">
+              <svg class="social-icon" viewBox="0 0 24 24" fill="#ffffff" xmlns="http://www.w3.org/2000/svg">
+                <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34l-.03-8.41a8.16 8.16 0 0 0 4.78 1.52V5.02a4.85 4.85 0 0 1-1-.33z"/>
+              </svg>
+            </a>
+        </div>
+        <ul class="mobile-menu-links" role="list">
+          <li><a href="/">HOME</a></li>
+          <li><a href="/#about-page">ABOUT</a></li>
+          <li><a href="#products">PRODUCTS</a></li>
+          <li><a href="/contact">CONTACT</a></li>
+        </ul>
+      </div>
+    </header>
+    
+    <script>
+      const hamburger = document.getElementById('hamburger');
+      const mobileMenu = document.getElementById('mobile-menu');
+
+      hamburger.addEventListener('click', () => {
+        const isOpen = hamburger.classList.toggle('open');
+        mobileMenu.classList.toggle('open', isOpen);
+        hamburger.setAttribute('aria-expanded', isOpen);
+      });
+
+      const menuLinks = document.querySelectorAll('.mobile-menu-links a');
+
+      menuLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          hamburger.classList.remove('open');
+          mobileMenu.classList.remove('open');
+          hamburger.setAttribute('aria-expanded', 'false');
+        });
+      });
+    </script>
+    
+<!-- ──────────────────────────────────────────────── PAGE CONTENT ───────────────────────────────────────────────── -->
+    
+    <main id="products" class="product-page">
+      <div class="product-page-inner">
+
+        <!-- PRODUCT PAGE TITLE -->
+        
+        <h1 class="product-page-title">
+          <span class="product-page-title-word-xyz">XYZ</span> <span class="product-page-title-word-springs">SPRINGS</span> PRODUCT RANGE
+        </h1>
+
+        <!-- PRODUCT INFORMATION BOX -->
+        
+        <div class="product-information-box">
+          At <span class="product-information-box-xyz">XYZ</span> <span class="product-information-box-springs">Springs</span>, we manufacture springs and 
+          wire forms in wire sizes from 0.3&nbsp;mm to 3&nbsp;mm, using stainless steel, phosphor bronze, precision drawn 
+          galvanised, and hand drawn low carbon wire.
+        </div>
+
+        <!-- PRODUCT CARDS ROW 1 -->
+        
+        <div class="product-grid">
+
+          <!-- PRODUCT CARD 1 COMPRESSION SPRING -->
+          
+          <div class="product-card">
+            <h2 class="product-card-heading">COMPRESSION SPRINGS</h2>
+            <div class="product-card-image-wrapper">
+              <picture>
+                <source srcset="compression-spring.webp" type="image/webp">
+                <img src="compression-spring.jpg" alt="Compression Spring" loading="lazy">
+              </picture>
+            </div>
+          </div>
+
+          <!-- PRODUCT CARD 2 TENSION SPRING -->
+          
+          <div class="product-card">
+            <h2 class="product-card-heading">TENSION SPRINGS</h2>
+            <div class="product-card-image-wrapper">
+              <picture>
+                <source srcset="tension-spring.webp" type="image/webp">
+                <img src="tension-spring.jpg" alt="Tension Spring" loading="lazy">
+              </picture>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- PRODUCT CARDS ROW 2 -->
+        
+        <div class="product-grid">
+
+          <!-- PRODUCT CARD 3 TORSION SPRINGS -->
+          
+          <div class="product-card">
+            <h2 class="product-card-heading">TORSION SPRINGS</h2>
+            <div class="product-card-image-wrapper">
+              <picture>
+                <source srcset="torsion-spring.webp" type="image/webp">
+                <img src="torsion-spring.jpg" alt="Torsion Spring" loading="lazy">
+              </picture>
+            </div>
+          </div>
+
+          <!-- PRODUCT CARD 4 WIRE FORMS -->
+          
+          <div class="product-card">
+            <h2 class="product-card-heading">WIRE FORMS</h2>
+            <div class="product-card-image-wrapper">
+              <picture>
+                <source srcset="wire-form.webp" type="image/webp">
+                <img src="wire-form.jpg" alt="Wire Form" loading="lazy">
+              </picture>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- CONTACT BUTTON -->
+        
+        <div class="product-page-contact-button-wrapper">
+          <a href="/contact" class="product-page-contact-button">CONTACT US</a>
+        </div>
+
+      </div>
+      
+      <!-- COPYRIGHT -->
+    
+      <div class="copyright">
+        © 2026 XYZ Springs (Demo Website). Portfolio project created by Kelvin Bradshaw.
+      </div>
+    </main>
+
+    <script defer src="/_vercel/speed-insights/script.js"></script>
+    <script defer src="/_vercel/insights/script.js"></script>
+    
+  </body>
+</html>
