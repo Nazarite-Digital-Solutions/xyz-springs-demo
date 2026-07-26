@@ -42,14 +42,15 @@ a {
 
 .banner a {
   font-weight: 700;
-  color: red;
-  text-decoration: none;
+  color: #B00000;
+  text-decoration: underline;
+  text-underline-offset: 3px;
   transition: color .3s ease;
 }
 
 .banner a:hover,
 .banner a:focus {
-  text-decoration: 2px underline;
+  color: #800000;
 }
 
 .separator {
